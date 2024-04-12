@@ -1,4 +1,4 @@
-name: Push commits into master
+name: Push commits into master nixpkgs
 on: 
   #push:
     #branches-ignore:
@@ -10,18 +10,18 @@ on:
 permissions:
   contents: write
 jobs:
-#git config user.name "GitHub Actions Bot"
-#git config user.email "<>"
-  merge:
+  mergebide:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Merge branches
         #git config --global user.email "zorrobert@mailbox.org"
         #git config --global user.name "zorrobert"
+        #git config user.name 'zorrobert'
+        #git config user.email 'zorrobert@mailbox.org'
         run: |
-          git config user.name 'zorrobert'
-          git config user.email 'zorrobert@mailbox.org'
+          git config --global user.email "zorrobert@mailbox.org"
+          git config --global user.name "zorrobert"
           
           git fetch --all
           git checkout master
