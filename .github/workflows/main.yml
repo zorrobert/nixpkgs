@@ -10,6 +10,8 @@ on:
 permissions:
   contents: write
 jobs:
+#git config user.name "GitHub Actions Bot"
+#git config user.email "<>"
   merge:
     runs-on: ubuntu-latest
     steps:
@@ -18,8 +20,8 @@ jobs:
         #git config --global user.email "zorrobert@mailbox.org"
         #git config --global user.name "zorrobert"
         run: |
-          git config --global user.name 'zorrobert'
-          git config --global user.email 'zorrobert@mailbox.org'
+          git config user.name 'zorrobert'
+          git config user.email 'zorrobert@mailbox.org'
           
           git fetch --all
           git checkout master
