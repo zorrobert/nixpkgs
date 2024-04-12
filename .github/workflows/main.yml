@@ -1,0 +1,38 @@
+name: Pull commits into master
+on: 
+  push:
+    branches-ignore:
+      - 'master'
+      - 'dev'
+  workflow_dispatch:
+  schedule:
+    - cron: '1 1 * * 6'
+permissions:
+  contents: write
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Merge branches
+        run: |
+          git config --global user.email "zorrobert@mailbox.org"
+          git config --global user.name "zorrobert"
+          
+          git fetch --all
+          git checkout master
+
+          echo "add nix-community/home-manager as upstream"
+          git remote add upstream https://github.com/nix-community/home-manager.git
+
+          echo "reset master branch to upstream"
+          git fetch upstream
+          git reset --hard upstream/master
+
+          echo "merge all branches"
+          git branch --all | sed 's/  remotes\///g' | sed 's/\/master//g' | sed 's/\/dev//g' | sed 's/\/HEAD//g' | grep "origin/" | xargs -L1 git merge
+
+          echo "force-push all changes to master"
+          git push --force
+
+          echo "done"
