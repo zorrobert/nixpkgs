@@ -22,8 +22,8 @@ jobs:
           git fetch --all
           git checkout master
 
-          echo "add nix-community/home-manager as upstream"
-          git remote add upstream https://github.com/nix-community/home-manager.git
+          echo "add https://github.com/NixOS/nixpkgs.git as upstream"
+          git remote add upstream https://github.com/NixOS/nixpkgs.git
 
           echo "reset master branch to upstream"
           git fetch upstream
