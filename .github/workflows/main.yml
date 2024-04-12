@@ -1,9 +1,9 @@
 name: Pull commits into master
 on: 
   push:
-    branches-ignore:
-      - 'master'
-      - 'dev'
+    #branches-ignore:
+    #  - 'master'
+    #  - 'dev'
   workflow_dispatch:
   schedule:
     - cron: '1 1 * * 6'
