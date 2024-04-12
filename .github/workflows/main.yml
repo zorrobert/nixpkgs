@@ -1,6 +1,6 @@
 name: Pull commits into master
 on: 
-  push:
+  #push:
     #branches-ignore:
     #  - 'master'
     #  - 'dev'
@@ -15,9 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Merge branches
+        #git config --global user.email "zorrobert@mailbox.org"
+        #git config --global user.name "zorrobert"
         run: |
-          git config --global user.email "zorrobert@mailbox.org"
-          git config --global user.name "zorrobert"
+          git config --global user.name 'zorrobert'
+          git config --global user.email 'zorrobert@mailbox.org'
           
           git fetch --all
           git checkout master
