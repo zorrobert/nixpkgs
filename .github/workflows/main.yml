@@ -1,4 +1,4 @@
-name: Pull commits into master
+name: Push commits into master
 on: 
   #push:
     #branches-ignore:
