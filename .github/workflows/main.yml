@@ -46,7 +46,7 @@ jobs:
           git --version
 
           echo "run git fetch"
-          git fetch
+          git fetch --all --depth 1
           
           echo "run git fetch master"
           
