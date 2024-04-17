@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Merge branches
         #git config --global user.email "zorrobert@mailbox.org"
         #git config --global user.name "zorrobert"
@@ -35,7 +36,13 @@ jobs:
         #git config --global user.email "zorrobert@mailbox.org"
           #git config --global user.name "zorrobert"
         run: |
+          echo "run git --version"
+          git --version
+
+          echo "run git fetch --all"
           git fetch --all
+
+          echo "run git checkout master"
           git checkout master
 
           echo "add https://github.com/NixOS/nixpkgs.git as upstream"
