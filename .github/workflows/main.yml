@@ -48,9 +48,6 @@ jobs:
           echo "run git fetch"
           git fetch --all --depth 1
           
-          echo "run git fetch master"
-          
-
           echo "run git checkout master"
           git checkout master
 
@@ -58,7 +55,7 @@ jobs:
           git remote add upstream https://github.com/NixOS/nixpkgs.git
 
           echo "run git fetch upstream"
-          git fetch upstream
+          git fetch upstream --depth 1
           echo "run git reset --hard upstream/master"
           git reset --hard upstream/master
 
