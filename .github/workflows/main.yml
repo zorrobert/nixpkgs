@@ -35,6 +35,9 @@ jobs:
         #git config --global user.email "zorrobert@mailbox.org"
           #git config --global user.name "zorrobert"
         run: |
+          echo "run ls"
+          ls -a
+          
           echo "set username and email"
           git config --global user.name 'zorrobert'
           git config --global user.email "zorrobert@mailbox.org"
@@ -43,7 +46,8 @@ jobs:
           git --version
 
           echo "run git fetch --all"
-          git fetch master
+          echo "run git fetch master"
+          
 
           echo "run git checkout master"
           git checkout master
