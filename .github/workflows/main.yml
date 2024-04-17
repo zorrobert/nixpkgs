@@ -31,10 +31,10 @@ jobs:
         #git config --global user.name "zorrobert"
         #git config user.name 'zorrobert'
         #git config user.email 'zorrobert@mailbox.org'
-        run: |
-          #git config --global user.email "zorrobert@mailbox.org"
+
+        #git config --global user.email "zorrobert@mailbox.org"
           #git config --global user.name "zorrobert"
-          
+        run: |
           git fetch --all
           git checkout master
 
