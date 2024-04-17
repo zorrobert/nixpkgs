@@ -27,7 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Merge branches
-        uses: actions/checkout@master
         #git config --global user.email "zorrobert@mailbox.org"
         #git config --global user.name "zorrobert"
         #git config user.name 'zorrobert'
