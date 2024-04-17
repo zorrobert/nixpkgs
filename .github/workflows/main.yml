@@ -29,8 +29,9 @@ jobs:
           echo "add https://github.com/NixOS/nixpkgs.git as upstream"
           git remote add upstream https://github.com/NixOS/nixpkgs.git
 
-          echo "reset master branch to upstream"
+          echo "rrun git fetch upstream"
           git fetch upstream
+          echo "run git reset --hard upstream/master"
           git reset --hard upstream/master
 
           echo "merge all branches"
