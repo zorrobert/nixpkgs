@@ -35,6 +35,10 @@ jobs:
         #git config --global user.email "zorrobert@mailbox.org"
           #git config --global user.name "zorrobert"
         run: |
+          echo "set username and email"
+          git config --global user.name 'zorrobert'
+          git config --global user.email "zorrobert@mailbox.org"
+          
           echo "run git --version"
           git --version
 
