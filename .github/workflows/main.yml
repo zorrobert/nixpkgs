@@ -45,7 +45,9 @@ jobs:
           echo "run git --version"
           git --version
 
-          echo "run git fetch --all"
+          echo "run git fetch"
+          git fetch
+          
           echo "run git fetch master"
           
 
