@@ -10,11 +10,24 @@ on:
 permissions:
   contents: write
 jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge syncthing -> master
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: syncthing
+          target_branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
   mergebide:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@master
       - name: Merge branches
+        uses: actions/checkout@master
         #git config --global user.email "zorrobert@mailbox.org"
         #git config --global user.name "zorrobert"
         #git config user.name 'zorrobert'
