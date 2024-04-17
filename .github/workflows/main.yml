@@ -40,7 +40,7 @@ jobs:
           git --version
 
           echo "run git fetch --all"
-          git fetch --all
+          git fetch --master
 
           echo "run git checkout master"
           git checkout master
