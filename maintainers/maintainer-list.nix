@@ -224,6 +224,12 @@
     githubId = 12578560;
     name = "Quinn Bohner";
   };
+  _8aed = {
+    email = "8aed@riseup.net";
+    github = "8aed";
+    githubId = 140662578;
+    name = "Huit Aed";
+  };
   _8-bit-fox = {
     email = "sebastian@markwaerter.de";
     github = "8-bit-fox";
@@ -9623,6 +9629,12 @@
     github = "john-rodewald";
     githubId = 51028009;
     name = "John Rodewald";
+  };
+  johnrtitor = {
+    email = "masumrezarock100@gmail.com";
+    github = "johnrtitor";
+    githubId = 50095635;
+    name = "Masum Reza";
   };
   john-shaffer = {
     email = "jdsha@proton.me";
