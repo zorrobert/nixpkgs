@@ -26,7 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/checkout@v2
       - name: Merge branches
         #git config --global user.email "zorrobert@mailbox.org"
         #git config --global user.name "zorrobert"
@@ -40,7 +39,7 @@ jobs:
           git --version
 
           echo "run git fetch --all"
-          git fetch --master
+          git fetch master
 
           echo "run git checkout master"
           git checkout master
