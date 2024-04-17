@@ -10,30 +10,30 @@ on:
 permissions:
   contents: write
 jobs:
-  sync-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-
-      - name: Merge syncthing -> master
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: syncthing
-          target_branch: master
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+#  sync-branch:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@master
+#
+#      - name: Merge syncthing -> master
+#        uses: devmasx/merge-branch@master
+#        with:
+#          type: now
+#          from_branch: syncthing
+#          target_branch: master
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
   mergebide:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: Merge branches
         #git config --global user.email "zorrobert@mailbox.org"
         #git config --global user.name "zorrobert"
         #git config user.name 'zorrobert'
         #git config user.email 'zorrobert@mailbox.org'
         run: |
-          git config --global user.email "zorrobert@mailbox.org"
-          git config --global user.name "zorrobert"
+          #git config --global user.email "zorrobert@mailbox.org"
+          #git config --global user.name "zorrobert"
           
           git fetch --all
           git checkout master
@@ -41,7 +41,7 @@ jobs:
           echo "add https://github.com/NixOS/nixpkgs.git as upstream"
           git remote add upstream https://github.com/NixOS/nixpkgs.git
 
-          echo "rrun git fetch upstream"
+          echo "run git fetch upstream"
           git fetch upstream
           echo "run git reset --hard upstream/master"
           git reset --hard upstream/master
