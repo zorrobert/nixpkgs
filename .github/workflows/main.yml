@@ -25,6 +25,11 @@ jobs:
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
   mergebide:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+      #workflows: write
     steps:
       - uses: actions/checkout@v3
       - name: Merge branches
